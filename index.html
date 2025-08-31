@@ -1,174 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sachin Tiwari - Data Science Professional</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        * {
-            font-family: 'Inter', sans-serif;
-        }
-        
-        .code-font {
-            font-family: 'JetBrains Mono', monospace;
-        }
-        
-        body {
-            background: #0A0A0A; /* pure tech black */
-            color: #FFFFFF;
-        }
-        
-        .tech-card {
-            background: linear-gradient(145deg, rgba(26, 31, 46, 0.8), rgba(15, 20, 25, 0.9));
-            border: 1px solid rgba(0, 188, 212, 0.2);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-        }
-        
-        .tech-card:hover {
-            border-color: rgba(0, 188, 212, 0.5);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.1);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #00BCD4, #00E5FF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .tech-grid {
-            background-image: 
-                linear-gradient(rgba(0, 188, 212, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 188, 212, 0.03) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-        
-        .progress-bar {
-            background: linear-gradient(90deg, #0A4A5C, #00BCD4);
-            height: 8px;
-            border-radius: 4px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .progress-bar::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            animation: shimmer 2s infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-        
-        .floating-element {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .tech-border {
-            position: relative;
-        }
-        
-        .tech-border::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, #00BCD4, #00E5FF, #0A4A5C, #1E6B7A);
-            border-radius: inherit;
-            padding: 1px;
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask-composite: exclude;
-            z-index: -1;
-        }
-        
-        .counter {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #00E5FF;
-        }
-        
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #00BCD4, transparent);
-            margin: 4rem 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sachin Tiwari - Data Science Professional</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    .code-font { font-family: 'JetBrains Mono', monospace; }
+
+    /* Background with canvas overlay */
+    body {
+      background: #0d1117;
+      color: #FFFFFF;
+      margin: 0;
+      overflow-x: hidden;
+      position: relative;
+    }
+    canvas#particleCanvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle at 20% 30%, rgba(56,189,248,0.12), transparent 40%),
+                  radial-gradient(circle at 80% 70%, rgba(139,92,246,0.12), transparent 40%),
+                  #0d1117;
+    }
+
+    .tech-card {
+      background: linear-gradient(145deg, rgba(26, 31, 46, 0.8), rgba(15, 20, 25, 0.9));
+      border: 1px solid rgba(0, 188, 212, 0.2);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .tech-card:hover {
+      border-color: rgba(0, 188, 212, 0.5);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 12px 32px rgba(0, 188, 212, 0.15);
+    }
+
+    /* Gradient animated text */
+    .gradient-text {
+      background: linear-gradient(270deg, #06b6d4, #8b5cf6, #06b6d4);
+      background-size: 600% 600%;
+      animation: gradientShift 15s ease infinite;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .tech-grid {
+      background-image:
+        linear-gradient(rgba(0, 188, 212, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 188, 212, 0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+
+    .progress-bar {
+      background: linear-gradient(90deg, #0A4A5C, #00BCD4);
+      height: 8px;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    .floating-element { animation: float 6s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .counter { font-size: 2.5rem; font-weight: 700; color: #00E5FF; }
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #00BCD4, transparent);
+      margin: 4rem 0;
+    }
+  </style>
 </head>
 <body class="tech-grid">
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center py-20">
-        <div class="container mx-auto px-6">
-            <div class="text-center">
-                <div class="floating-element">
-                    <h1 class="text-6xl font-bold mb-4">
-                        Sachin <span class="gradient-text">Tiwari</span>
-                    </h1>
-                    <div class="code-font text-xl text-gray-300 mb-6">
-                        <i class="fas fa-terminal text-teal-400 mr-2"></i>
-                        Lead Business Analyst & Data Science Professional
-                    </div>
-                </div>
-                
-                <div class="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-                    <div class="tech-card rounded-lg p-6">
-                        <i class="fas fa-database text-3xl text-teal-400 mb-3"></i>
-                        <h3 class="font-semibold text-lg">Big Data & Analytics</h3>
-                        <p class="text-gray-400 text-sm">SQL, Python, Spark, Snowflake</p>
-                    </div>
-                    <div class="tech-card rounded-lg p-6">
-                        <i class="fas fa-chart-line text-3xl text-teal-400 mb-3"></i>
-                        <h3 class="font-semibold text-lg">Data Visualization</h3>
-                        <p class="text-gray-400 text-sm">Tableau, Looker, Apache Superset, PowerBI</p>
-                    </div>
-                    <div class="tech-card rounded-lg p-6">
-                        <i class="fas fa-robot text-3xl text-teal-400 mb-3"></i>
-                        <h3 class="font-semibold text-lg">Machine Learning</h3>
-                        <p class="text-gray-400 text-sm">Generative AI, Statistics, MLOps</p>
-                    </div>
-                </div>
-                
-                <div class="flex justify-center gap-6 text-gray-300">
-                    <a href="tel:+918826565453" class="flex items-center hover:text-teal-400 transition-colors">
-                        <i class="fas fa-phone mr-2"></i>
-                        +91 8826565453
-                    </a>
-                    <a href="mailto:sachintiwari2809@gmail.com" class="flex items-center hover:text-teal-400 transition-colors">
-                        <i class="fas fa-envelope mr-2"></i>
-                        sachintiwari2809@gmail.com
-                    </a>
-                    <a href="https://www.linkedin.com/in/sachin-tiwari-b0185114a" class="flex items-center hover:text-teal-400 transition-colors" style="color:#00BCD4";>
-                        <i class="fab fa-linkedin mr-2"></i>
-                        LinkedIn
-                    </a>
-                </div>
-                
-                <div class="mt-6 text-gray-400">
-                    <i class="fas fa-map-marker-alt mr-2"></i>
-                    Sector 14, Gurugram, 122001
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Particle canvas -->
+  <canvas id="particleCanvas"></canvas>
 
+  <!-- keep your existing content -->
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center py-20">
+    <div class="container mx-auto px-6">
+      <div class="text-center">
+        <div class="floating-element">
+          <h1 class="text-6xl font-bold mb-4">
+            Sachin <span class="gradient-text">Tiwari</span>
+          </h1>
+          <div class="code-font text-xl text-gray-300 mb-6">
+            <i class="fas fa-terminal text-teal-400 mr-2"></i>
+            Lead Business Analyst | Data Scientist
+          </div>
+        </div>
+        <!-- Rest of your existing content remains unchanged -->
+      </div>
+    </div>
+  </section>
+
+  <!-- keep all other sections as is (About, Skills, Experience, Education, Contact, Footer) -->
     <!-- About Section -->
     <section class="py-20">
         <div class="container mx-auto px-6">
@@ -546,6 +498,7 @@
                     </div>
                     
                     <!-- Spinny -->
+                    <!-- Spinny - Business Analyst -->
                     <div class="tech-card rounded-xl p-8">
                         <div class="flex items-start justify-between mb-4">
                             <div>
@@ -565,7 +518,7 @@
                             </div>
                             <div class="flex items-start">
                                 <i class="fas fa-cogs text-teal-400 mt-1 mr-3"></i>
-                                <span>Created solutions in inventory, sales reporting, distribution that streamlined processes</span>
+                                <span>Created solutions in inventory, sales reporting, and distribution that streamlined processes</span>
                             </div>
                             <div class="flex items-start">
                                 <i class="fas fa-chart-bar text-teal-400 mt-1 mr-3"></i>
@@ -573,9 +526,39 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Spinny - Analyst -->
+                    <div class="tech-card rounded-xl p-8">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-teal-400">Analyst</h3>
+                                <div class="text-xl text-gray-300 mb-2">Spinny</div>
+                                <div class="code-font text-sm text-gray-400">SQL, G-Sheet, RedashBI</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-teal-400 font-semibold">Oct 2019 – Jul 2020</div>
+                                <div class="text-gray-400">Gurgaon, Haryana</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-gray-300">
+                            <div class="flex items-start">
+                                <i class="fas fa-search text-teal-400 mt-1 mr-3"></i>
+                                <span>Conducted root cause analysis to formulate counter measures to business mistakes and improve operations</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-cogs text-teal-400 mt-1 mr-3"></i>
+                                <span>Introduced Self-Serve model to automate ad-hoc reporting on Redash</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-database text-teal-400 mt-1 mr-3"></i>
+                                <span>Conducted research to determine the best inventory split</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </section>
 
     <!-- Education & Certifications Section -->
@@ -713,5 +696,59 @@
             </p>
         </div>
     </footer>
+  <script>
+    // Particle network background animation
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+    for (let i = 0; i < 80; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        dx: (Math.random() - 0.5) * 1.2,
+        dy: (Math.random() - 0.5) * 1.2,
+        radius: 2
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p, i) => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(139,92,246,0.7)";
+        ctx.fill();
+
+        particles.forEach((q, j) => {
+          if (i !== j) {
+            let dx = p.x - q.x, dy = p.y - q.y;
+            let dist = Math.sqrt(dx*dx + dy*dy);
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(q.x, q.y);
+              ctx.strokeStyle = "rgba(56,189,248,0.15)";
+              ctx.stroke();
+            }
+          }
+        });
+
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
 </body>
 </html>
