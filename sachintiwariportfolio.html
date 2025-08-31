@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin Tiwari - Data Science Professional</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        body {
+            background: #0A0A0A; /* pure tech black */
+            color: #FFFFFF;
+        }
+        
+        .tech-card {
+            background: linear-gradient(145deg, rgba(26, 31, 46, 0.8), rgba(15, 20, 25, 0.9));
+            border: 1px solid rgba(0, 188, 212, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-card:hover {
+            border-color: rgba(0, 188, 212, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #00BCD4, #00E5FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(0, 188, 212, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 188, 212, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #0A4A5C, #00BCD4);
+            height: 8px;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .tech-border {
+            position: relative;
+        }
+        
+        .tech-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #00BCD4, #00E5FF, #0A4A5C, #1E6B7A);
+            border-radius: inherit;
+            padding: 1px;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            z-index: -1;
+        }
+        
+        .counter {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #00E5FF;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #00BCD4, transparent);
+            margin: 4rem 0;
+        }
+    </style>
+</head>
+<body class="tech-grid">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <div class="floating-element">
+                    <h1 class="text-6xl font-bold mb-4">
+                        Sachin <span class="gradient-text">Tiwari</span>
+                    </h1>
+                    <div class="code-font text-xl text-gray-300 mb-6">
+                        <i class="fas fa-terminal text-teal-400 mr-2"></i>
+                        Lead Business Analyst & Data Science Professional
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+                    <div class="tech-card rounded-lg p-6">
+                        <i class="fas fa-database text-3xl text-teal-400 mb-3"></i>
+                        <h3 class="font-semibold text-lg">Big Data & Analytics</h3>
+                        <p class="text-gray-400 text-sm">SQL, Python, Spark, Snowflake</p>
+                    </div>
+                    <div class="tech-card rounded-lg p-6">
+                        <i class="fas fa-chart-line text-3xl text-teal-400 mb-3"></i>
+                        <h3 class="font-semibold text-lg">Data Visualization</h3>
+                        <p class="text-gray-400 text-sm">Tableau, Looker, Apache Superset, PowerBI</p>
+                    </div>
+                    <div class="tech-card rounded-lg p-6">
+                        <i class="fas fa-robot text-3xl text-teal-400 mb-3"></i>
+                        <h3 class="font-semibold text-lg">Machine Learning</h3>
+                        <p class="text-gray-400 text-sm">Generative AI, Statistics, MLOps</p>
+                    </div>
+                </div>
+                
+                <div class="flex justify-center gap-6 text-gray-300">
+                    <a href="tel:+918826565453" class="flex items-center hover:text-teal-400 transition-colors">
+                        <i class="fas fa-phone mr-2"></i>
+                        +91 8826565453
+                    </a>
+                    <a href="mailto:sachintiwari2809@gmail.com" class="flex items-center hover:text-teal-400 transition-colors">
+                        <i class="fas fa-envelope mr-2"></i>
+                        sachintiwari2809@gmail.com
+                    </a>
+                    <a href="www.linkedin.com/in/sachin-tiwari-b0185114a" class="flex items-center hover:text-teal-400 transition-colors">
+                        <i class="fab fa-linkedin mr-2"></i>
+                        LinkedIn
+                    </a>
+                </div>
+                
+                <div class="mt-6 text-gray-400">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    Sector 14, Gurugram, 122001
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+                    <i class="fas fa-user-tie mr-3"></i>About Me
+                </h2>
+                
+                <div class="tech-card rounded-xl p-8">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                                Data Science professional with <span class="text-teal-400 font-semibold">6+ years of experience</span> in transforming complex business challenges into data-driven solutions. Specialized in <span class="text-teal-400">automation, machine learning, and business intelligence</span> with a proven track record of delivering measurable business impact.
+                            </p>
+                            <p class="text-gray-400 leading-relaxed">
+                                Expert in data-driven storytelling, leading cross-functional teams, and building scalable analytics solutions that drive strategic decision-making across organizations.
+                            </p>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="text-center">
+                                <div class="counter">₹26+</div>
+                                <div class="text-gray-400 text-sm">Crore Business Impact</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="counter">2300+</div>
+                                <div class="text-gray-400 text-sm">Hours Saved</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="counter">93%</div>
+                                <div class="text-gray-400 text-sm">AI Model Accuracy</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="counter">7+</div>
+                                <div class="text-gray-400 text-sm">Team Members Led</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+                    <i class="fas fa-cogs mr-3"></i>Technical Expertise
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="tech-card rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6 text-teal-400">
+                            <i class="fas fa-database mr-3"></i>Databases & Big Data
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">MySQL</span>
+                                    <span class="text-teal-400">95%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Snowflake</span>
+                                    <span class="text-teal-400">95%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Apache Spark</span>
+                                    <span class="text-teal-400">95%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Databricks</span>
+                                    <span class="text-teal-400">90%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6 text-teal-400">
+                            <i class="fas fa-chart-pie mr-3"></i>Data Visualization
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Tableau</span>
+                                    <span class="text-teal-400">95%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Looker</span>
+                                    <span class="text-teal-400">90%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Apache Superset</span>
+                                    <span class="text-teal-400">90%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Advanced Excel</span>
+                                    <span class="text-teal-400">92%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">RedashBI</span>
+                                    <span class="text-teal-400">85%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6 text-teal-400">
+                            <i class="fas fa-code mr-3"></i>Programming & ML
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Python</span>
+                                    <span class="text-teal-400">92%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Generative AI</span>
+                                    <span class="text-teal-400">88%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Statistics</span>
+                                    <span class="text-teal-400">90%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Gradient Boosting</span>
+                                    <span class="text-teal-400">85%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">ARIMA/SARIMA/SARIMAX</span>
+                                    <span class="text-teal-400">90%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6 text-teal-400">
+                            <i class="fas fa-shield-alt mr-3"></i>Data Governance
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">OpenMetadata</span>
+                                    <span class="text-teal-400">88%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Data Lineage</span>
+                                    <span class="text-teal-400">90%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-2">
+                                    <span class="code-font">Metabase</span>
+                                    <span class="text-teal-400">85%</span>
+                                </div>
+                                <div class="bg-gray-700 rounded-full h-2">
+                                    <div class="progress-bar rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+                    <i class="fas fa-briefcase mr-3"></i>Professional Experience
+                </h2>
+                
+                <div class="space-y-8">
+                    <!-- Meesho -->
+                    <div class="tech-card rounded-xl p-8">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-teal-400">Lead Business Analyst</h3>
+                                <div class="text-xl text-gray-300 mb-2">Meesho</div>
+                                <div class="code-font text-sm text-gray-400">SQL, Python, Generative AI</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-teal-400 font-semibold">Apr 2025 – Present</div>
+                                <div class="text-gray-400">Bangalore, Karnataka</div>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="space-y-3 text-gray-300">
+                                <div class="flex items-start">
+                                    <i class="fas fa-rocket text-teal-400 mt-1 mr-3"></i>
+                                    <span>Saved ~2300+ hours by driving automation initiatives across NMV, Pricing, and Mall PODs</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-users text-teal-400 mt-1 mr-3"></i>
+                                    <span>Streamlined complex business finance processes by leading and mentoring a team of 6 analysts</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-shield-alt text-teal-400 mt-1 mr-3"></i>
+                                    <span>Designed pin code-level pricing computation schema with median z-score-based alerts</span>
+                                </div>
+                            </div>
+                            <div class="space-y-3 text-gray-300">
+                                <div class="flex items-start">
+                                    <i class="fas fa-chart-line text-teal-400 mt-1 mr-3"></i>
+                                    <span>Mitigated potential risks of ₹15 crore through advanced analytics</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-brain text-teal-400 mt-1 mr-3"></i>
+                                    <span>Delivered ~83% accuracy in insight generation using low-code model with few-shot prompting</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-award text-teal-400 mt-1 mr-3"></i>
+                                    <span>Cleared RISE leadership assessment, demonstrating strong people management capabilities</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tata 1mg -->
+                    <div class="tech-card rounded-xl p-8">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-teal-400">Senior Business Intelligence Analyst</h3>
+                                <div class="text-xl text-gray-300 mb-2">Tata 1mg</div>
+                                <div class="code-font text-sm text-gray-400">SQL, Tableau, Python, Machine Learning</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-teal-400 font-semibold">Jun 2024 – Apr 2025</div>
+                                <div class="text-gray-400">Gurgaon, Haryana</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-gray-300">
+                            <div class="flex items-start">
+                                <i class="fas fa-dollar-sign text-teal-400 mt-1 mr-3"></i>
+                                <span><strong>Pulse:</strong> Created a data product using Tableau for data monetization project, contributing approximately ₹11 crore in revenue</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-eye text-teal-400 mt-1 mr-3"></i>
+                                <span><strong>Pro-sight:</strong> Developed a module that analysts can import to easily derive insights by providing data and few inputs</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-card rounded-xl p-8">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-teal-400">Business Intelligence Analyst</h3>
+                                <div class="text-xl text-gray-300 mb-2">Tata 1mg</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-teal-400 font-semibold">Oct 2022 – May 2024</div>
+                                <div class="text-gray-400">Gurgaon, Haryana</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-gray-300">
+                            <div class="flex items-start">
+                                <i class="fas fa-robot text-teal-400 mt-1 mr-3"></i>
+                                <span><strong>Project Wall-E:</strong> Developed a model using OpenAI achieving human-level accuracy (~93%) in converting text to SQL</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-database text-teal-400 mt-1 mr-3"></i>
+                                <span><strong>Prometheus:</strong> Implemented data governance using open-source tool, improving data discovery and establishing knowledge center</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-piggy-bank text-teal-400 mt-1 mr-3"></i>
+                                <span>Assisted in data warehousing migration, resulting in 39% cost saving at Contribution Margin One</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- EXL -->
+                    <div class="tech-card rounded-xl p-8">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-teal-400">Senior Business Analyst</h3>
+                                <div class="text-xl text-gray-300 mb-2">EXL</div>
+                                <div class="code-font text-sm text-gray-400">SQL, Tableau</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-teal-400 font-semibold">Mar 2022 – Oct 2022</div>
+                                <div class="text-gray-400">Gurgaon, Haryana</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-gray-300">
+                            <div class="flex items-start">
+                                <i class="fas fa-exchange-alt text-teal-400 mt-1 mr-3"></i>
+                                <span>Worked on BI report migration project for US-based Insurance Client</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-users text-teal-400 mt-1 mr-3"></i>
+                                <span>Led team of Business Analysts for project documentation of process flow automation</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-microphone text-teal-400 mt-1 mr-3"></i>
+                                <span>Helped Insurance client build base in Speech analytics and streamline contact center process</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Spinny -->
+                    <div class="tech-card rounded-xl p-8">
+                        <div class="flex items-start justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-teal-400">Business Analyst</h3>
+                                <div class="text-xl text-gray-300 mb-2">Spinny</div>
+                                <div class="code-font text-sm text-gray-400">SQL, G-Sheet, RedashBI</div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-teal-400 font-semibold">Jul 2020 – Mar 2022</div>
+                                <div class="text-gray-400">Gurgaon, Haryana</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 text-gray-300">
+                            <div class="flex items-start">
+                                <i class="fas fa-tachometer-alt text-teal-400 mt-1 mr-3"></i>
+                                <span>Enhanced website Inbound team's SLA by 40% through proper call flow and CRM migration</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-cogs text-teal-400 mt-1 mr-3"></i>
+                                <span>Created solutions in inventory, sales reporting, distribution that streamlined processes</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-chart-bar text-teal-400 mt-1 mr-3"></i>
+                                <span>Responsible for Live reports reflecting Demand KPI and automated ad-hoc reporting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+                    <i class="fas fa-graduation-cap mr-3"></i>Education & Certifications
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Education -->
+                    <div class="tech-card rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6 text-teal-400">
+                            <i class="fas fa-university mr-3"></i>Education
+                        </h3>
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-teal-400 pl-4">
+                                <h4 class="font-semibold text-lg">MSc. Data Science</h4>
+                                <p class="text-gray-400">Liverpool John Moores University, London</p>
+                            </div>
+                            <div class="border-l-4 border-teal-400 pl-4">
+                                <h4 class="font-semibold text-lg">Diploma in Data Science</h4>
+                                <p class="text-gray-400">International Institute of Information Technology, Bangalore (IIITB)</p>
+                            </div>
+                            <div class="border-l-4 border-teal-400 pl-4">
+                                <h4 class="font-semibold text-lg">Bachelors in Business Administration</h4>
+                                <p class="text-gray-400">Bharathiar University, Coimbatore</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Certifications -->
+                    <div class="tech-card rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6 text-teal-400">
+                            <i class="fas fa-certificate mr-3"></i>Certifications
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-teal-400 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">Supervised Learning</div>
+                                    <div class="text-sm text-gray-400">Stanford Online (2022 - Present)</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-teal-400 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">Python for Data Science & AI</div>
+                                    <div class="text-sm text-gray-400">IBM (2022 - Present)</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-teal-400 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">Business Matrices for Data Driven Company</div>
+                                    <div class="text-sm text-gray-400">Duke University (2020 - Present)</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-teal-400 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">Managing Big Data with MySQL</div>
+                                    <div class="text-sm text-gray-400">Duke University (2020 - Present)</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-teal-400 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">Customer Analytics</div>
+                                    <div class="text-sm text-gray-400">Wharton School (2020 - Present)</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-teal-400 mr-3"></i>
+                                <div>
+                                    <div class="font-medium">Operations Analytics</div>
+                                    <div class="text-sm text-gray-400">Wharton School (2020 - Present)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 gradient-text">
+                    <i class="fas fa-envelope mr-3"></i>Let's Connect
+                </h2>
+                
+                <div class="tech-card rounded-xl p-8">
+                    <div class="text-center">
+                        <p class="text-xl text-gray-300 mb-8">
+                            Ready to transform your data into actionable insights? Let's discuss how I can help drive your business forward with data-driven solutions.
+                        </p>
+                        
+                        <div class="grid md:grid-cols-3 gap-6 mb-8">
+                            <a href="tel:+918826565453" class="tech-card rounded-lg p-6 hover:text-teal-400 transition-colors group">
+                                <i class="fas fa-phone text-3xl mb-3 group-hover:text-teal-400"></i>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p class="text-gray-400">+91 8826565453</p>
+                            </a>
+                            <a href="mailto:sachintiwari2809@gmail.com" class="tech-card rounded-lg p-6 hover:text-teal-400 transition-colors group">
+                                <i class="fas fa-envelope text-3xl mb-3 group-hover:text-teal-400"></i>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-gray-400">sachintiwari2809@gmail.com</p>
+                            </a>
+                            <a href="www.linkedin.com/in/sachin-tiwari-b0185114a" class="tech-card rounded-lg p-6 hover:text-teal-400 transition-colors group">
+                                <i class="fab fa-linkedin text-3xl mb-3 group-hover:text-teal-400"></i>
+                                <h4 class="font-semibold">LinkedIn</h4>
+                                <p class="text-gray-400">Connect with me</p>
+                            </a>
+                        </div>
+                        
+                        <div class="text-gray-400">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            Sector 14, Gurugram, 122001
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-700">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-400">
+                © 2024 Sachin Tiwari. Transforming data into actionable business insights.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
